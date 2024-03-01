@@ -11,27 +11,6 @@ from django.contrib import messages
 
 
 def index(request):
-    # global test_url
-    # try:
-    # youtubeUrl = request.GET.get("video")
-    # if youtubeUrl:
-    #     test_url = YouTube(youtubeUrl)
-    #     options = test_url.streams.filter(progressive=True)
-    #     for option in options:
-    #         print(option)
-    #     print(test_url.title)
-    #     test_title = test_url.title
-        # videos = test_url.streams.filter(progressive=True)
-        # img_url=test_url.thumbnail_url
-        # mesage = '++++++++++++++++'
-        # except:
-            # mesage = 'Enter Valid YouTube Video URL!'
-            # return templates.TemplateResponse("about.html" ,{"request":request, "mesage":mesage})
-            #{"request":request, "mesage":mesage,"videos":videos,"test_title":test_title,"img_url":img_url}
-        # context = {
-        #     "test_url": test_url,
-        #     "test_title":test_title
-        # }
     return render(request, 'index.html')
 
 def show(request):
