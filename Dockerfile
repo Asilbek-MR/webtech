@@ -17,10 +17,14 @@ COPY . /app
 
 EXPOSE 8000
 
+RUN python manage.py collectstatic --noinput
+RUN python manage.py migrate
+
+# CMD ["python", "manage.py","collectstatic","migrate"]
 CMD ["python", "manage.py","runserver"]
 
 
-
+# RUN chmod +x /code/local-entrypoint.sh
 
 
 
