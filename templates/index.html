@@ -10,7 +10,7 @@
     <meta name="author" content="AkbarJon Azamov">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Education Meeting HTML5 Template</title>
+    <title>Web Dasturlashga kirish fanini masofadan turib o'qitish tizimini yaratish! </title>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -32,28 +32,7 @@ https://templatemo.com/tm-569-edu-meeting
 
 <body>
 
-  <!-- Sub Header -->
-  <div class="sub-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-sm-8">
-          <div class="left-content">
-            <p>This is an educational <em>HTML CSS</em> template by TemplateMo website.</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-4">
-          <div class="right-icons">
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
@@ -62,24 +41,15 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="col-12">
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
-                          Edu Meeting
+                      <a href="/" class="logo">
+                          Web tech
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                          <li><a href="meetings.html">Meetings</a></li>
-                          <li class="scroll-to-section"><a href="#apply">Apply Now</a></li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Pages</a>
-                              <ul class="sub-menu">
-                                  <li><a href="meetings.html">Upcoming Meetings</a></li>
-                                  <li><a href="meeting-details.html">Meeting Details</a></li>
-                              </ul>
-                          </li>
-                          <li class="scroll-to-section"><a href="#courses">Courses</a></li> 
-                          <li class="scroll-to-section"><a href="#contact">Contact Us</a></li> 
+                        <a href="{% url 'index' %}"><li class="scroll-to-section">Home</li></a>
+                        <a href="#courses"><li class="scroll-to-section">Courses</li> </a>
+                        <a href="{% url 'contact' %}"><li class="scroll-to-section">Contact Us</li> </a>
                       </ul>        
                       <a class='menu-trigger'>
                           <span>Menu</span>
@@ -91,7 +61,7 @@ https://templatemo.com/tm-569-edu-meeting
       </div>
   </header>
   <!-- ***** Header Area End ***** -->
-
+{% block content %}
   <!-- ***** Main Banner Area Start ***** -->
   <section class="section main-banner" id="top" data-section="section1">
       <video autoplay muted loop id="bg-video">
@@ -210,13 +180,13 @@ https://templatemo.com/tm-569-edu-meeting
                   <div class="price">
                     <span>$22.00</span>
                   </div>
-                  <a href="{% url 'meeting-details.html' %}"><img src="{% static "assets/images/meeting-01.jpg" %}" alt="New Lecturer Meeting"></a>
+                  <a href="{% url 'detail' %}"><img src="{% static "assets/images/meeting-01.jpg" %}" alt="New Lecturer Meeting"></a>
                 </div>
                 <div class="down-content">
                   <div class="date">
                     <h6>Nov <span>10</span></h6>
                   </div>
-                  <a href="meeting-details.html"><h4>New Lecturers Meeting</h4></a>
+                  <a href="{% url 'detail' %}"><h4>New Lecturers Meeting</h4></a>
                   <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
                 </div>
               </div>
@@ -227,13 +197,13 @@ https://templatemo.com/tm-569-edu-meeting
                   <div class="price">
                     <span>$36.00</span>
                   </div>
-                  <a href="{% url 'meeting-details.html' %}"><img src="{% static "assets/images/meeting-02.jpg" %}" alt="Online Teaching"></a>
+                  <a href="{% url 'detail' %}"><img src="{% static "assets/images/meeting-02.jpg" %}" alt="Online Teaching"></a>
                 </div>
                 <div class="down-content">
                   <div class="date">
                     <h6>Nov <span>24</span></h6>
                   </div>
-                  <a href="{% url 'meeting-details.html' %}"><h4>Online Teaching Techniques</h4></a>
+                  <a href="{% url 'detail' %}"><h4>Online Teaching Techniques</h4></a>
                   <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
                 </div>
               </div>
@@ -244,13 +214,13 @@ https://templatemo.com/tm-569-edu-meeting
                   <div class="price">
                     <span>$14.00</span>
                   </div>
-                  <a href="{% url 'meeting-details.html' %}"><img src="{% static "assets/images/meeting-03.jpg" %}" alt="Higher Education"></a>
+                  <a href="{% url 'detail' %}"><img src="{% static "assets/images/meeting-03.jpg" %}" alt="Higher Education"></a>
                 </div>
                 <div class="down-content">
                   <div class="date">
                     <h6>Nov <span>26</span></h6>
                   </div>
-                  <a href="{% url 'meeting-details.html' %}"><h4>Higher Education Conference</h4></a>
+                  <a href="{% url 'detail' %}"><h4>Higher Education Conference</h4></a>
                   <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
                 </div>
               </div>
@@ -261,13 +231,13 @@ https://templatemo.com/tm-569-edu-meeting
                   <div class="price">
                     <span>$48.00</span>
                   </div>
-                  <a href="{% url 'meeting-details.html' %}"><img src="{% static "assets/images/meeting-04.jpg" %}" alt="Student Training"></a>
+                  <a href="{% url 'detail' %}"><img src="{% static "assets/images/meeting-04.jpg" %}" alt="Student Training"></a>
                 </div>
                 <div class="down-content">
                   <div class="date">
                     <h6>Nov <span>30</span></h6>
                   </div>
-                  <a href="{% url 'meeting-details.html' %}"><h4>Student Training Meetup</h4></a>
+                  <a href="{% url 'detail' %}"><h4>Student Training Meetup</h4></a>
                   <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
                 </div>
               </div>
@@ -693,6 +663,7 @@ https://templatemo.com/tm-569-edu-meeting
       </div>
     </div>
   </section>
+  {% endblock content %}
 
   <section class="contact-us" id="contact">
     <div class="container">
@@ -764,13 +735,12 @@ https://templatemo.com/tm-569-edu-meeting
           <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
     </div>
   </section>
-
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
 
-    <script src="{% static "static/assets/js/isotope.min.js" %}"></script>
+    <script src="{% static "assets/js/isotope.min.js" %}"></script>
     <script src="{% static "assets/js/owl-carousel.js" %}"></script>
     <script src="{% static "assets/js/lightbox.js" %}"></script>
     <script src="{% static "assets/js/tabs.js" %}"></script>

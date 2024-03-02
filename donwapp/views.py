@@ -13,45 +13,14 @@ from django.contrib import messages
 def index(request):
     return render(request, 'index.html')
 
-def show(request):
-    global test_url
-    video = request.GET.get('video')
-    try:
-        re.search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", video)
-        test_url = YouTube(video)
-        options = test_url.title
-    # except RegexMatchError:
-    #     return render(request, 'done.html')
-    except Exception:
-        return render(request, 'done.html')
-        
-    if video:
-        test_url = YouTube(video)
-        options = test_url.streams.filter(progressive=True)
-        test_title = test_url.title
-        img_url=test_url.thumbnail_url
-    
-        context = {
-            "options":options,
-            "test_title": test_title,
-            "img_url":img_url,
-            "videos": True
-        }
-    if request.method == "POST":
-        download = request.POST.get('download')
-        buffer = BytesIO()
-        down = test_url.streams.get_by_resolution(download)
-        down.stream_to_buffer(buffer)
-        buffer.seek(0)
-        headers = {
-                "Content-Disposition": f'attachment; filename="{test_url.title}.mp4"'
-            }
-        
-        return StreamingHttpResponse(buffer, content_type='video/mp4', headers=headers)
-    return render(request, 'about.html', context=context)
+def detail(request):
+    return render(request, 'meeting-details.html')
 
 def done(request):
     return render(request, 'done.html')
+
+def contact(request):
+    return render(request, 'contact.html')
 
 def feedback(request):
     name = request.POST.get('name')
