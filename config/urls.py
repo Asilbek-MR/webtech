@@ -30,6 +30,6 @@ sitemaps = {'static': StaticViewSitemap}
 urlpatterns = [    
     path('robots.txt/', TemplateView.as_view(template_name='robots.txt', content_type='text/plain') ),
     path('sitemap.xml', sitemap , {'sitemaps': sitemaps }, name='django.contrib.sitemap.views.sitemap'),
-    path('admin99/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', include('donwapp.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
