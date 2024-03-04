@@ -33,6 +33,24 @@ class Answer(models.Model):
         return self.correct
 
 
+class Article(models.Model):
+    title = models.CharField(max_length=255)
+    summary = models.CharField(max_length=255)
+    body = models.TextField()
+
+    def __str__(self):
+        return self.title
+
+
+class Students(models.Model):
+    name = models.CharField(max_length=255)
+    succeeded = models.IntegerField(default=0)
+    students = models.IntegerField(default=0)
+    teachers = models.IntegerField(default=0)
+    awards = models.IntegerField(default=0)
+    
+    def __str__(self) -> str:
+        return self.name
 
 
 class Feedback(models.Model):
@@ -44,3 +62,5 @@ class Feedback(models.Model):
     
     def __str__(self):
         return self.name
+    
+    

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Feedback,Answer,Test,Category
+from .models import Feedback,Answer,Test,Category,Article,Students
 # Register your models here.
 
 @admin.register(Feedback)
@@ -17,6 +17,13 @@ class TestAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'summary','read_time','body','title')
+    list_display = ('name', 'summary','read_time','body')
 
 
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('title', 'summary','body')
+
+@admin.register(Students)
+class StudentsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'succeeded','students','teachers','awards')

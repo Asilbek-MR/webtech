@@ -22,6 +22,21 @@ def done(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def test(request):
+    return render(request, 'test.html')
+
+
+def course(request):
+    return render(request, 'course.html')
+
+
+def course_detail(request):
+    return render(request, 'course-detail.html')
+
+def test_detail(request):
+    return render(request, 'test-detail.html')
+
+
 def feedback(request):
     name = request.POST.get('name')
     email = request.POST.get('email')

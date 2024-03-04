@@ -48,7 +48,9 @@ https://templatemo.com/tm-569-edu-meeting
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                         <a href="{% url 'index' %}"><li class="scroll-to-section">Home</li></a>
-                        <a href="#courses"><li class="scroll-to-section">Courses</li> </a>
+                        {% comment %} <a href="#courses"><li class="scroll-to-section">Courses</li> </a> {% endcomment %}
+                        <a href="{% url 'test' %}"><li class="scroll-to-section">Test</li> </a>
+                        <a href="{% url 'course' %}"><li class="scroll-to-section">Course</li> </a>
                         <a href="{% url 'contact' %}"><li class="scroll-to-section">Contact Us</li> </a>
                       </ul>        
                       <a class='menu-trigger'>
