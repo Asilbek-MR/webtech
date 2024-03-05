@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import index, detail, done, feedback,contact,test,course,course_detail,test_detail
 
-app_name = 'downapp'
 
 urlpatterns = [
     path('', index, name='index'),
