@@ -4,7 +4,7 @@ from .views import index, detail, done, feedback,contact,test,course,course_deta
 
 urlpatterns = [
     path('', index, name='index'),
-    path('detail/', detail, name='detail'),
+    path('detail/<int:id>/', detail, name='detail'),
     path('contact/', contact, name='contact'),
     path('tests/', test, name='test'),
     path('courses/', course, name='course'),

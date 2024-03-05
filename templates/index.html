@@ -144,13 +144,13 @@ https://templatemo.com/tm-569-edu-meeting
                   <div class="price">
                     <span>{{i.title}}</span>
                   </div>
-                  <a href="{% url 'detail' %}"><img src="{{ i.image.url }}" alt="New Lecturer Meeting"></a>
+                  <a href="{% url 'detail' i.id %}"><img src="{{ i.image.url }}" alt="New Lecturer Meeting"></a>
                 </div>
                 <div class="down-content">
                   <div class="date">
                     <h6>Mart <span>10</span></h6>
                   </div>
-                  <a href="{% url 'detail' %}"><h4>{{i.name}}</h4></a>
+                  <a href="{% url 'detail' i.id %}"><h4>{{i.name}}</h4></a>
                   <p>{{i.summary}}</p>
                 </div>
               </div>

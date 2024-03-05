@@ -24,14 +24,29 @@ def index(request):
     }
     return render(request, 'index.html',context)
 
-def detail(request):
-    return render(request, 'meeting-details.html')
+def detail(request,id):
+    category = Category.objects.filter(id=id).first()
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        Feedback.objects.create(name=name, email=email, subject=subject, text=message)
+    context = {
+        "category":category
+    }
+    return render(request, 'meeting-details.html', context)
 
 def done(request):
     return render(request, 'done.html')
 
 def contact(request):
-    
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        Feedback.objects.create(name=name, email=email, subject=subject, text=message)
     return render(request, 'contact.html')
 
 def test(request):
