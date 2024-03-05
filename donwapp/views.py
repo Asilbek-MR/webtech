@@ -9,6 +9,12 @@ def index(request):
     category = Category.objects.all()
     feedback = Feedback.objects.all()
     students = Student.objects.all()
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        Feedback.objects.create(name=name, email=email, subject=subject, text=message)
     context = {
         "article":obj,
         "category":category,
@@ -25,6 +31,7 @@ def done(request):
     return render(request, 'done.html')
 
 def contact(request):
+    
     return render(request, 'contact.html')
 
 def test(request):
