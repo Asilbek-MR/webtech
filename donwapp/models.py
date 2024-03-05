@@ -9,6 +9,7 @@ class Category(models.Model):
     summary = models.CharField(max_length=255)
     read_time = models.IntegerField(default=0)
     body = models.TextField()
+    image = models.ImageField(upload_to="category/")
     
     def __str__(self):
         return self.name

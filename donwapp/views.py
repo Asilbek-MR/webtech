@@ -6,8 +6,14 @@ from .models import Feedback,Answer,Article,Category,Student,Test
 
 def index(request):
     obj = Article.objects.all()
+    category = Category.objects.all()
+    feedback = Feedback.objects.all()
+    students = Student.objects.all()
     context = {
         "article":obj,
+        "category":category,
+        "feedback":feedback,
+        "students":students
 
     }
     return render(request, 'index.html',context)
