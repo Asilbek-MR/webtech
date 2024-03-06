@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'donwapp',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,18 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 800,
+        'extraAllowedContent': 'iframe[*]',
+    },
+}
+
 
 TEMPLATES = [
     {
