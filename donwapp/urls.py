@@ -9,7 +9,7 @@ urlpatterns = [
     path('tests/', test, name='test'),
     path('courses/', course, name='course'),
     path('course-detail/', course_detail, name='course_detail'),
-    path('test-detail/', test_detail, name='test_detail'),
+    path('test-detail/<int:id>/', test_detail, name='test_detail'),
     path('done/', done, name='done'),
     path('feedback/', feedback, name='feedback'),
     

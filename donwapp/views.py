@@ -50,7 +50,16 @@ def contact(request):
     return render(request, 'contact.html')
 
 def test(request):
-    return render(request, 'test.html')
+    category = Category.objects.all()
+    test = Test.objects.all()
+    obj = Article.objects.all()
+    
+    context = {
+        "article":obj,
+        "category":category,
+        'test':test
+    }
+    return render(request, 'test.html',context)
 
 
 def course(request):
@@ -60,8 +69,25 @@ def course(request):
 def course_detail(request):
     return render(request, 'course-detail.html')
 
-def test_detail(request):
-    return render(request, 'test-detail.html')
+def test_detail(request,id):
+    test = Test.objects.filter(id=id).first()
+    answer = test.answer.all()
+    
+    print(request.POST.get('name'))
+    name = request.POST.get('name')
+    if name == "True":
+        print("Please enter")
+    context = {
+       "test":test,
+       "answer":answer
+    }
+    return render(request, 'test-detail.html', context)
+
+
+# def test_detail(request):
+   
+#     return render(request, 'test-detail.html')
+
 
 
 def feedback(request):
