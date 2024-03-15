@@ -1,5 +1,9 @@
 from django.urls import path
-from .views import index, detail, done, feedback,contact,test,course,course_detail,test_detail
+from .views import (
+    index, detail, done, feedback,
+    contact,test,course,course_detail,test_detail,
+    quiz,submit_quiz
+    )
 
 
 urlpatterns = [
@@ -12,5 +16,7 @@ urlpatterns = [
     path('test-detail/<int:id>/', test_detail, name='test_detail'),
     path('done/', done, name='done'),
     path('feedback/', feedback, name='feedback'),
+    path('quiz/', quiz, name='quiz'),
+    path('submit_quiz/', submit_quiz, name='submit_quiz'),
     
 ]

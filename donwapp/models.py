@@ -14,14 +14,22 @@ class Category(models.Model):
     
     def __str__(self):
         return self.name
-
+class LangCategory(models.Model):
+    name = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
+    
 class Test(models.Model):
     name = models.CharField(max_length=255)
     number = models.IntegerField(default=0)
     body = models.TextField()
     image = models.ImageField(upload_to="test/")
     summary = models.CharField(max_length=255)
-    
+    category = models.ForeignKey(LangCategory, null=True,on_delete=models.CASCADE,related_name="lang")
+    incorrert1 = models.CharField(max_length=255)
+    incorrert2 = models.CharField(max_length=255)
+    incorrert3 = models.CharField(max_length=255)
+    correct = models.CharField(max_length=255)
     def __str__(self):
         return self.name
 
@@ -35,6 +43,8 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.correct
+
+
 
 
 class Article(models.Model):
