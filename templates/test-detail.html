@@ -13,20 +13,34 @@
             <div class="col-lg-12">
               <div class="item">
                   
-              <form action="{% url 'submit_quiz' %}" method="post">
+              {% comment %} <form action="{% url 'submit_quiz' %}" method="post">
                 {% csrf_token %}
                 {% for i in test %}
                     <h3>{{ i.name }}</h3>
                     <p>{{ i.body }}</p>
                     <ul>
-                    <li><input type="checkbox" name="a" value="true">{{ i.correct }} </li>
-                    <li><input type="checkbox" name="" value="false">{{ i.incorrert1 }}</li>
-                    <li><input type="checkbox" name="" value="false">{{ i.incorrert2 }}</li>
-                    <li><input type="checkbox" name="" value="false">{{ i.incorrert3 }}</li>
+                    <li><input type="checkbox" name="a" value="{{ i.correct }}">{{ i.correct }} </li>
+                    <li><input type="checkbox" name="b" value="false">{{ i.incorrert1 }}</li>
+                    <li><input type="checkbox" name="c" value="false">{{ i.incorrert2 }}</li>
+                    <li><input type="checkbox" name="d" value="false">{{ i.incorrert3 }}</li>
                 </ul>
                 {% endfor %}
                 <button type="submit">Submit</button>
-            </form>
+            </form> {% endcomment %}
+            <form action="{% url 'submit_quiz' %}" method="post">
+              {% csrf_token %}
+              {% for i in test %}
+                  <h3>{{ i.name }}</h3>
+                  <p>{{ i.body }}</p>
+                  <ul>
+                      <li><input type="checkbox" name="q{{ forloop.counter }}_correct" value="1"> {{ i.correct }}</li>
+                      <li><input type="checkbox" name="q{{ forloop.counter }}" value="0"> {{ i.incorrert1 }}</li>
+                      <li><input type="checkbox" name="q{{ forloop.counter }}" value="0"> {{ i.incorrert2 }}</li>
+                      <li><input type="checkbox" name="q{{ forloop.counter }}" value="0"> {{ i.incorrert3 }}</li>
+                  </ul>
+              {% endfor %}
+              <button type="submit">Submit</button>
+          </form>
             </div>
           
               </div>

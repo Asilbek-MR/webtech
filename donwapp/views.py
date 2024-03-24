@@ -71,8 +71,6 @@ def course_detail(request):
 
 def test_detail(request,id):
     test = Test.objects.filter(number=id)
-    print(test)
-    print(request.POST.get('name'))
     name = request.POST.get('name')
     if name == "True":
         print("Please enter")
@@ -96,43 +94,21 @@ def quiz(request):
     return render(request, 'quiz.html', context)
 
 def submit_quiz(request):
-    l1=[]
+    correct_answers = 0
     if request.method == 'POST':
-        print(request.POST.get('a'))
-        print(request.POST.get('a'))
-        print(request.POST.get('a'))
-        print(request.POST.get('a'))
-        # print(request.POST.get('5'))
-        # print(request.POST.get('6'))
-        # print(request.POST.get('7'))
-        # print(request.POST.get('8'))
-        # print(request.POST.get('9'))
-        # print(request.POST.get('10'))
-        # print(request.POST.get('11'))
-        # print(request.POST.get('12'))
-        # print(request.POST.get('13'))
-        # print(request.POST.get('14'))
-        # print(request.POST.get('15'))
-        # print(request.POST.get('16'))
-        # print(request.POST.get('17'))
-        # print(request.POST.get('18'))
-        # print(request.POST.get('19'))
-        # print(request.POST.get('20'))
-        l1.append(request.POST.get('1'))
-        l1.append(request.POST.get('2'))
-        l1.append(request.POST.get('3'))
-        l1.append(request.POST.get('4'))
-        l1.append(request.POST.get('5'))
-        print(l1)
-        correct_answers = 0
-        for key, value in request.POST.items():
-            if key.startswith('question_'):
-                test_id = int(key.split('_')[1])
-                test = Test.objects.get(id=test_id)
-                correct_answer = test.answers.first().correct
-                if correct_answer == value:
-                    correct_answers += 1
+        score = 0  # Natijani hisoblash uchun boshlang'ich qiymat
+        for i in range(1, 4):  # test obyektlar soni (1 dan 11 gacha)
+            correct_answers = request.POST.get(f'q{i}_correct')  # To'g'ri javob
+            selected_answers = request.POST.getlist(f'q{i}') # Tanlangan javoblar
+            print(selected_answers,"selected_answers")
+            print(correct_answers,"correct_answers")
+            if correct_answers in selected_answers:
+                score += 1
+                print(score)
         return render(request, 'result.html', {'correct_answers': correct_answers})
+        
+
+        
     return redirect('quiz')
 
 
