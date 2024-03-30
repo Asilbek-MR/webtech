@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
-CSRF_TRUSTED_ORIGINS  = ['https://bytebytedo.com', 'https://16.16.209.64']
+# CSRF_TRUSTED_ORIGINS  = ['https://bytebytedo.com', 'https://16.16.209.64']
+CSRF_TRUSTED_ORIGINS  = ['http://localhost:8000']
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
