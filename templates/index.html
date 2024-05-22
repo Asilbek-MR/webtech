@@ -22,7 +22,12 @@
     <link rel="stylesheet" href="{% static "assets/css/owl.css" %}">
     <link rel="stylesheet" href="{% static "assets/css/lightbox.css" %}">
 <!--
-
+1. Dasturni main pagan to’g’rilash
+2. Word yorish 3 bob uchun
+3. Testni to’g’rilab berish remove social media icon.
+4. Maqolalarni to’ldirish. 
+5. Fikirlarni ham to’g’rilash.
+6. Ma’lumotlarni to’g’rilb chiqish.
 TemplateMo 569 Edu Meeting
 
 https://templatemo.com/tm-569-edu-meeting
@@ -96,6 +101,7 @@ https://templatemo.com/tm-569-edu-meeting
           <div class="owl-service-item owl-carousel">
           
             {% for i in article %}
+            <a href="{% url 'article' i.id %}">
             <div class="item">
               <div class="icon">
                 <img src="{% static "assets/images/service-icon-01.png" %}" alt="">
@@ -105,6 +111,7 @@ https://templatemo.com/tm-569-edu-meeting
                 <p></p>
               </div>
             </div>
+          </a>
             {%  endfor %}
             
             

@@ -29,10 +29,10 @@ ALLOWED_HOSTS = ['*']
 
 
 # CSRF_TRUSTED_ORIGINS  = ['https://bytebytedo.com', 'https://16.16.209.64']
-CSRF_TRUSTED_ORIGINS  = ['https://bytebytedo.com','http://localhost:8000','http://16.171.199.73']
+CSRF_TRUSTED_ORIGINS  = ['https://bytebytedo.com','http://localhost:8000','http://16.171.199.73','http://0.0.0.0:8000']
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
 # Application definition
 

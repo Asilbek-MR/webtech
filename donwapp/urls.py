@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     index, detail, done, feedback,
     contact,test,course,course_detail,test_detail,
-    quiz,submit_quiz
+    quiz,submit_quiz, article
     )
 
 
@@ -18,5 +18,7 @@ urlpatterns = [
     path('feedback/', feedback, name='feedback'),
     path('quiz/', quiz, name='quiz'),
     path('submit_quiz/', submit_quiz, name='submit_quiz'),
+    path('blog-detail/<int:id>/', article, name='article'),
+
     
 ]

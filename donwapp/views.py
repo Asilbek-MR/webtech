@@ -121,3 +121,10 @@ def feedback(request):
     return render(request, 'feedback.html')
 
 
+
+def article(request,id):
+    object = Article.objects.filter(id=id).first()
+    context = {
+        "object":object
+    }
+    return render(request, 'article.html',context)
