@@ -31,7 +31,8 @@ urlpatterns = [
     path('robots.txt/', TemplateView.as_view(template_name='robots.txt', content_type='text/plain') ),
     path('sitemap.xml', sitemap , {'sitemaps': sitemaps }, name='django.contrib.sitemap.views.sitemap'),
     path('admin/', admin.site.urls),
-    path('', include('donwapp.urls'))
+    path('', include('donwapp.urls')),
+    path('summernote/', include('django_summernote.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

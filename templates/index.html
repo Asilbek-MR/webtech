@@ -55,7 +55,7 @@ https://templatemo.com/tm-569-edu-meeting
                         <a href="{% url 'index' %}"><li class="scroll-to-section">Home</li></a>
                         {% comment %} <a href="#courses"><li class="scroll-to-section">Courses</li> </a> {% endcomment %}
                         <a href="{% url 'test' %}"><li class="scroll-to-section">Test</li> </a>
-                        <a href="{% url 'course' %}"><li class="scroll-to-section">Course</li> </a>
+                        {% comment %} <a href="{% url 'course' %}"><li class="scroll-to-section">Course</li> </a> {% endcomment %}
                         <a href="{% url 'contact' %}"><li class="scroll-to-section">Contact Us</li> </a>
                       </ul>        
                       <a class='menu-trigger'>
@@ -295,13 +295,13 @@ https://templatemo.com/tm-569-edu-meeting
                 <div class="col-12">
                   <div class="count-area-content percentage">
                     <div class="count-digit">{{i.succeeded}}</div>
-                    <div class="count-title">Succesed Students</div>
+                    <div class="count-title">Muofaqiyatli Talabalar</div>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="count-area-content">
                     <div class="count-digit">{{i.teachers}}</div>
-                    <div class="count-title">Current Teachers</div>
+                    <div class="count-title">Mavjud O'qtuvchilat</div>
                   </div>
                 </div>
               </div>
@@ -311,13 +311,13 @@ https://templatemo.com/tm-569-edu-meeting
                 <div class="col-12">
                   <div class="count-area-content new-students">
                     <div class="count-digit">{{i.students}}</div>
-                    <div class="count-title">New Students</div>
+                    <div class="count-title">Yangi Talabalar</div>
                   </div>
                 </div> 
                 <div class="col-12">
                   <div class="count-area-content">
                     <div class="count-digit">{{i.awards}}</div>
-                    <div class="count-title">Awards</div>
+                    <div class="count-title">Mukofotlar</div>
                   </div>
                 </div>
               </div>

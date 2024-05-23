@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Feedback,Answer,Article,Category,Student,Test
+from .models import Feedback,Article,Category,Student,Test
+
 # Create your views here.
 
 
