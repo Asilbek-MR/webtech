@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'donwapp',
     'ckeditor',
-    'django_summernote',
 ]
 
 MIDDLEWARE = [
