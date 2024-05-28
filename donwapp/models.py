@@ -1,5 +1,4 @@
 from django.db import models
-from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -81,3 +80,11 @@ class Feedback(models.Model):
         return self.name
     
     
+class Course(models.Model):
+    name = models.CharField(max_length=200)
+    title = models.CharField(max_length=100)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE, related_name='category')
+    courseurl = models.URLField(max_length=200)
+
+    def __str__(self):
+        return self.name

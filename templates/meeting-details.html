@@ -3,51 +3,45 @@
 
   <!-- ***** Header Area End ***** -->
   {% block content %} 
-  <section class="heading-page header-text" id="top">
+
+  <section class="upcoming-meetings" id="meetings">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h6>Barcha tafsilotlarni oling</h6>
-          <h2>Onlayn o'qitish va o'qitish vositalari</h2>
+          <div class="section-heading">
+            <h2>Kurslar</h2>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="meetings-page" id="meetings">
-    <div class="container">
-      <div class="row">
         <div class="col-lg-12">
           <div class="row">
-            <div class="col-lg-12">
-              <div class="meeting-single-item">
+            {% for i in course %}
+            <div class="col-lg-4">
+              <div class="meeting-item">
                 <div class="thumb">
                   <div class="price">
-                    <span>{{category.title}}</span>
+                    <span>{{i.title}}</span>
                   </div>
-                  <div class="date">
-                    <h6>Mart <span>12</span></h6>
+                  <div class="embed-responsive embed-responsive-4by3">
+                    <iframe width="416" height="315" class="embed-responsive-item" src="{{ i.courseurl }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                   </div>
-                  <a href="meeting-details.html"><img src="assets/images/single-meeting.jpg" alt=""></a>
                 </div>
                 <div class="down-content">
-                  <a href="#"><h4>{{category.summary}}</h4></a>
-                  <p class="description">
-                    {{category.body}}
-                  </p>
-
+                  <div class="date">
+                    <h6>Mart <span>10</span></h6>
+                  </div>
+                  <a href=""><h4>{{i.name}}</h4></a>
+                  <p></p>
                 </div>
               </div>
             </div>
-            <div class="col-lg-12">
-              <div class="main-button-red">
-                <a href="{% url 'index' %}">Qaytish!</a>
-              </div>
-            </div>
+            
+            {% endfor %}
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   {% endblock content %}

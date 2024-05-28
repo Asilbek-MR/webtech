@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Feedback,Article,Category,Student,Test
+from .models import Feedback,Article,Category,Student,Test, Course
+from django.utils.text import Truncator
 
 # Create your views here.
 
@@ -26,7 +27,7 @@ def index(request):
     return render(request, 'index.html',context)
 
 def detail(request,id):
-    category = Category.objects.filter(id=id).first()
+    course = Course.objects.filter(category=id)
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
@@ -34,8 +35,10 @@ def detail(request,id):
         message = request.POST.get('message')
         Feedback.objects.create(name=name, email=email, subject=subject, text=message)
     context = {
-        "category":category
+        "course":course,
+        
     }
+    print(context)
     return render(request, 'meeting-details.html', context)
 
 def done(request):
@@ -54,6 +57,9 @@ def test(request):
     category = Category.objects.all()
     test = Test.objects.all()
     obj = Article.objects.all()
+
+    for obj in category:
+        obj.body = Truncator(obj.body).words(10, truncate=' ...')
     
     context = {
         "article":obj,

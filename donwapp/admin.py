@@ -1,11 +1,7 @@
 from django.contrib import admin
-from .models import Feedback,Answer,Test,Category,Article,Student,LangCategory
-from django_summernote.admin import SummernoteModelAdmin
+from .models import Feedback,Answer,Test,Category,Article,Student,LangCategory,Course
 
 # Register your models here.
-class SomeModelAdmin(SummernoteModelAdmin):  # instead of ModelAdmin
-    summernote_fields = '__all__'
-
 @admin.register(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = ('name', 'email','subject','created')
@@ -35,3 +31,7 @@ class ArticleAdmin(admin.ModelAdmin):
 @admin.register(Student)
 class StudentsAdmin(admin.ModelAdmin):
     list_display = ('name', 'succeeded','students','teachers','awards')
+
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ('name', 'title','courseurl')
