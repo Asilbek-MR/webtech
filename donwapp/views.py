@@ -38,7 +38,6 @@ def detail(request,id):
         "course":course,
         
     }
-    print(context)
     return render(request, 'meeting-details.html', context)
 
 def done(request):

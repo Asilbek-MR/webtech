@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -50,7 +51,7 @@ class Answer(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length=255)
     summary = models.CharField(max_length=255)
-    body = models.TextField()
+    body = RichTextField()
     image = models.ImageField(upload_to='article')
 
     def __str__(self):

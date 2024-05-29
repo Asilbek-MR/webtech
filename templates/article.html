@@ -14,7 +14,7 @@
               <div class="meeting-single-item">
                 <div class="thumb">
                   <div class="price">
-                    <span>{{object.title}}</span>
+                    <span>{{object.title | safe}}</span>
                   </div>
                   <div class="date">
                     <h6>Mart <span>12</span></h6>
@@ -22,10 +22,8 @@
                   <a href="meeting-details.html"><img src="assets/images/single-meeting.jpg" alt=""></a>
                 </div>
                 <div class="down-content">
-                  <a href="#"><h4>{{object.summary}}</h4></a>
-                  <p class="description">
-                    {{object.body}}
-                  </p>
+                  <a href="#"><h4>{{object.summary | safe}}</h4></a>
+                    {{object.body| safe}}
 
                 </div>
               </div>
