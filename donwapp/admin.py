@@ -11,13 +11,13 @@ class LangCategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
 
-@admin.register(Answer)
-class AnswerAdmin(admin.ModelAdmin):
-    list_display =  ('correct','incorrert1', 'incorrert2','incorrert3')
+# @admin.register(Answer)
+# class AnswerAdmin(admin.ModelAdmin):
+#     list_display =  ('correct','incorrert1', 'incorrert2','incorrert3')
 
-@admin.register(Test)
-class TestAdmin(admin.ModelAdmin):
-    list_display = ('name', 'number','body')
+# @admin.register(Test)
+# class TestAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'number','body')
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
